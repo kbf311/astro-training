@@ -1,11 +1,523 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="AstroSphere - 次世代の高速Web体験を提供するデモサイト"
+  description="Astroフレームワークのパワーを活用した、圧倒的パフォーマンスと美しいデザインを両立するモダンWebサイトです。"
+>
+  <!-- ヒーローセクション -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="badge-wrapper">
+        <span class="badge">
+          <span class="pulse-dot"></span>
+          Astro 5.x ＆ 最新モダンWeb技術を搭載
+        </span>
+      </div>
+
+      <h1 class="hero-title">
+        次世代のWebを、<br />
+        <span class="gradient-text">もっと速く、もっと美しく。</span>
+      </h1>
+
+      <p class="hero-description">
+        AstroSphereは、最先端のアイランドアーキテクチャとモダンデザインシステムを融合したWebサイトプラットフォームです。不要なJavaScriptを排除し、息をのむほどスムーズな閲覧体験をお届けします。
+      </p>
+
+      <div class="hero-actions">
+        <a href="/features" class="btn btn-primary">
+          <span>機能を見る</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="/contact" class="btn btn-secondary">
+          <span>無料デモを予約</span>
+        </a>
+      </div>
+
+      <!-- 統計情報バー -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">100<span class="stat-unit">%</span></span>
+          <span class="stat-label">Lighthouse Performance</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">0.1<span class="stat-unit">s</span></span>
+          <span class="stat-label">平均ページロード時間</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">0<span class="stat-unit">kb</span></span>
+          <span class="stat-label">デフォルトJSフットプリント</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">99.9<span class="stat-unit">%</span></span>
+          <span class="stat-label">稼働率 & 安定性</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 特徴ハイライトセクション -->
+  <section class="features-preview-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">コアテクノロジー</span>
+        <h2 class="section-title">選ばれる3つの革新的アプローチ</h2>
+        <p class="section-subtitle">
+          従来のWebサイト制作の常識を覆す、AstroSphere独自のハイブリッドアーキテクチャ。
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card feature-card">
+          <div class="feature-icon icon-purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m13 2-2 2.5V8l3 1.5 3-1.5V4.5L15 2h-2Z"></path>
+              <path d="M12 8.5V16"></path>
+              <path d="m5 10 7 4 7-4"></path>
+              <path d="M5 14l7 4 7-4"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">アイランドアーキテクチャ</h3>
+          <p class="feature-text">
+            ページ全体を静的なHTMLとして生成し、動的なインタラクションが必要な箇所だけを独立した「アイランド」として分離ロードします。
+          </p>
+          <a href="/features" class="feature-link">詳しく見る →</a>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon icon-pink">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="feature-title">超高速ゼロJSデフォルト</h3>
+          <p class="feature-text">
+            訪問者のブラウザに余計なスクリプトを一切送信しないため、モバイル回線でも瞬時にページが表示され、直帰率を劇的に低減します。
+          </p>
+          <a href="/features" class="feature-link">詳しく見る →</a>
+        </div>
+
+        <div class="card feature-card">
+          <div class="feature-icon icon-cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+              <path d="M3 9h18"></path>
+              <path d="M9 21V9"></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">柔軟なエコシステム</h3>
+          <p class="feature-text">
+            React、Vue、Svelteなどお気に入りのUIフレームワークを適材適所で自由に組み合わせ可能。チームの既存資産を最大化します。
+          </p>
+          <a href="/features" class="feature-link">詳しく見る →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- インタラクティブ・デモショーケース -->
+  <section class="showcase-section">
+    <div class="container">
+      <div class="showcase-card">
+        <div class="showcase-content">
+          <span class="badge">ライブデモ体験</span>
+          <h2 class="showcase-title">軽量インタラクションを体感</h2>
+          <p class="showcase-desc">
+            クライアントサイドのスクリプトもスマートに動作。以下のボタンをクリックしてリアルタイムにカウントアップを試してみてください。
+          </p>
+          <div class="interactive-box">
+            <div class="counter-display">
+              <span class="counter-label">インタラクション回数:</span>
+              <span id="demo-counter" class="counter-val">0</span>
+            </div>
+            <div class="counter-buttons">
+              <button id="btn-count-up" class="btn btn-primary btn-sm">クリックしてカウント +1</button>
+              <button id="btn-count-reset" class="btn btn-secondary btn-sm">リセット</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAバナー -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2 class="cta-title">あなたのWebサイトを、次の次元へ。</h2>
+        <p class="cta-subtitle">
+          まずは無料デモやご相談からお気軽にどうぞ。専任スタッフが迅速にご案内します。
+        </p>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn btn-primary">お問い合わせ・無料相談</a>
+          <a href="/about" class="btn btn-secondary">会社情報を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  const counterEl = document.getElementById('demo-counter');
+  const countUpBtn = document.getElementById('btn-count-up');
+  const countResetBtn = document.getElementById('btn-count-reset');
+
+  let count = 0;
+
+  if (counterEl && countUpBtn && countResetBtn) {
+    countUpBtn.addEventListener('click', () => {
+      count++;
+      counterEl.textContent = String(count);
+      counterEl.classList.add('pop');
+      setTimeout(() => counterEl.classList.remove('pop'), 200);
+    });
+
+    countResetBtn.addEventListener('click', () => {
+      count = 0;
+      counterEl.textContent = '0';
+    });
+  }
+</script>
+
+<style>
+  /* ヒーロー */
+  .hero-section {
+    padding: 80px 0 60px;
+    position: relative;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-section {
+      padding: 120px 0 80px;
+    }
+  }
+
+  .badge-wrapper {
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  @media (min-width: 640px) {
+    .hero-title {
+      font-size: 3.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: 4rem;
+    }
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 680px;
+    margin: 0 auto 36px;
+  }
+
+  @media (min-width: 768px) {
+    .hero-description {
+      font-size: 1.2rem;
+    }
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  /* 統計バー */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .stat-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-unit {
+    font-size: 1.25rem;
+    color: #818cf8;
+    margin-left: 2px;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+
+  /* 特徴セクション */
+  .features-preview-section {
+    padding: 80px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 48px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+    margin: 16px 0 12px;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 2.4rem;
+    }
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .features-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .icon-purple {
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #a5b4fc;
+  }
+
+  .icon-pink {
+    background: rgba(236, 72, 153, 0.15);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    color: #f472b6;
+  }
+
+  .icon-cyan {
+    background: rgba(6, 182, 212, 0.15);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    color: #22d3ee;
+  }
+
+  .feature-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .feature-text {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .feature-link {
+    color: #818cf8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+
+  .feature-link:hover {
+    transform: translateX(4px);
+    color: #a5b4fc;
+  }
+
+  /* ショーケース */
+  .showcase-section {
+    padding: 40px 0 80px;
+  }
+
+  .showcase-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(236, 72, 153, 0.04));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .showcase-card {
+      padding: 56px 40px;
+    }
+  }
+
+  .showcase-title {
+    font-size: 1.75rem;
+    margin: 16px 0 12px;
+  }
+
+  .showcase-desc {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .interactive-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 380px;
+    width: 100%;
+  }
+
+  .counter-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .counter-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .counter-val {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #818cf8;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .counter-val.pop {
+    transform: scale(1.3);
+  }
+
+  .counter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* CTAバナー */
+  .cta-section {
+    padding: 40px 0 100px;
+  }
+
+  .cta-banner {
+    background: radial-gradient(circle at top center, rgba(99, 102, 241, 0.2) 0%, rgba(9, 13, 22, 0.9) 80%);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 60px 24px;
+    text-align: center;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+  }
+
+  .cta-title {
+    font-size: 1.85rem;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .cta-title {
+      font-size: 2.3rem;
+    }
+  }
+
+  .cta-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+</style>

@@ -1,0 +1,190 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- ブランド情報 -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <div class="logo-icon-sm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <span class="logo-text">Astro<span class="logo-highlight">Sphere</span></span>
+        </a>
+        <p class="brand-desc">
+          次世代のハイパフォーマンスWeb体験を提供するモダンテクノロジーデモプラットフォーム。
+        </p>
+      </div>
+
+      <!-- ナビゲーションリンク群 -->
+      <div class="footer-links-group">
+        <h4 class="links-title">ナビゲーション</h4>
+        <ul class="footer-links">
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/features">機能・特徴</a></li>
+          <li><a href="/about">私たちについて</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="links-title">プロダクト</h4>
+        <ul class="footer-links">
+          <li><a href="/features#performance">超高速アーキテクチャ</a></li>
+          <li><a href="/features#security">堅牢なセキュリティ</a></li>
+          <li><a href="/features#ecosystem">充実したエコシステム</a></li>
+          <li><a href="/contact">サポート・FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4 class="links-title">リソース</h4>
+        <ul class="footer-links">
+          <li><a href="https://docs.astro.build" target="_blank" rel="noopener noreferrer">Astro公式ドキュメント ↗</a></li>
+          <li><a href="https://github.com/withastro/astro" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+          <li><a href="/about#team">開発チーム</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {currentYear} AstroSphere Inc. All rights reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#">プライバシーポリシー</a>
+        <span class="divider">・</span>
+        <a href="#">利用規約</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #060910;
+    border-top: 1px solid var(--border-subtle);
+    padding: 64px 0 32px;
+    margin-top: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    margin-bottom: 16px;
+  }
+
+  .logo-icon-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #818cf8;
+  }
+
+  .logo-highlight {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .brand-desc {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  .links-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-main);
+    letter-spacing: 0.02em;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-links a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+  }
+
+  .footer-bottom {
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  @media (min-width: 640px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-bottom-links a:hover {
+    color: var(--text-muted);
+  }
+
+  .divider {
+    color: rgba(255, 255, 255, 0.2);
+  }
+</style>

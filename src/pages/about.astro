@@ -1,0 +1,380 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: "スピードへの絶対的なこだわり",
+    desc: "100ミリ秒の差がユーザー体験とコンバージョンを大きく左右します。私たちは一切の無駄な通信とスクリプトを削ぎ落とします。"
+  },
+  {
+    title: "デザインと機能美の調和",
+    desc: "高速であることと美しいことは両立できる。洗練されたタイポグラフィ、繊細なアニメーション、直感的なUIを追求します。"
+  },
+  {
+    title: "開発者と利用者の幸福",
+    desc: "コンテンツ編集者には直感的な運用を、エンジニアには堅牢な型安全性を。関わるすべての人が心地よい設計を貫きます。"
+  }
+];
+
+const team = [
+  {
+    name: "佐藤 蓮 / Ren Sato",
+    role: "Founder & Lead Architect",
+    bio: "Webフロントエンド歴12年。複数の大規模SPA刷新プロジェクトを主導した経験からAstroSphereを立ち上げ。",
+    avatar: "👨‍💻"
+  },
+  {
+    name: "エマ・チェン / Emma Chen",
+    role: "Head of Product Design",
+    bio: "北欧デザインファーム出身。アクセシビリティとマイクロインタラクション設計のエキスパート。",
+    avatar: "👩‍🎨"
+  },
+  {
+    name: "高橋 健 / Ken Takahashi",
+    role: "Core Performance Engineer",
+    bio: "ブラウザレンダリングエンジンとコンパイラ最適化に情熱を注ぐ、パフォーマンスの求道者。",
+    avatar: "⚡"
+  }
+];
+
+const milestones = [
+  { year: "2024", title: "AstroSphere プロジェクト始動", desc: "次世代Webアーキテクチャのプロトタイプ開発を開始。" },
+  { year: "2025", title: "エンタープライズ版デモ公開", desc: "初期パートナー企業50社以上へ先行導入、表示速度の平均80%改善を実証。" },
+  { year: "2026", title: "グローバルプラットフォーム展開", desc: "Astro 5 & 最新エッジ基盤に対応した総合ソリューションとして拡大中。" }
+];
+---
+
+<Layout 
+  title="私たちについて - AstroSphere" 
+  description="AstroSphereの開発背景、ミッション、コアバリュー、チームメンバーについてご紹介します。"
+>
+  <div class="about-page">
+    <!-- ヒーロー -->
+    <header class="page-header text-center">
+      <div class="container">
+        <span class="badge">私たちについて</span>
+        <h1 class="page-title">Webの限界を再定義し、<br /><span class="gradient-text">すべてのブラウザに感動を</span></h1>
+        <p class="page-desc">
+          肥大化し続ける現代のWebサイトに対し、AstroSphereは「究極の軽快さ」と「圧倒的なデザイン性」の共存を提案します。
+        </p>
+      </div>
+    </header>
+
+    <!-- コアバリュー -->
+    <section class="container values-section">
+      <div class="section-heading text-center">
+        <span class="badge">理念と信条</span>
+        <h2 class="sub-title">大切にしている3つの価値観</h2>
+      </div>
+
+      <div class="values-grid">
+        {values.map((v, i) => (
+          <div class="card value-card">
+            <span class="value-index">0{i + 1}</span>
+            <h3 class="value-title">{v.title}</h3>
+            <p class="value-desc">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- チームメンバー -->
+    <section class="container team-section" id="team">
+      <div class="section-heading text-center">
+        <span class="badge">クリエイター</span>
+        <h2 class="sub-title">コアメンバー</h2>
+        <p class="section-subtext">世界中から集まったエンジニアとデザイナーが最高の体験を作っています。</p>
+      </div>
+
+      <div class="team-grid">
+        {team.map((m) => (
+          <div class="card member-card text-center">
+            <div class="member-avatar">{m.avatar}</div>
+            <h3 class="member-name">{m.name}</h3>
+            <span class="member-role">{m.role}</span>
+            <p class="member-bio">{m.bio}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 沿革・タイムライン -->
+    <section class="container timeline-section">
+      <div class="section-heading text-center">
+        <span class="badge">これまでの歩み</span>
+        <h2 class="sub-title">沿革・マイルストーン</h2>
+      </div>
+
+      <div class="timeline">
+        {milestones.map((m) => (
+          <div class="timeline-item">
+            <div class="timeline-year">{m.year}</div>
+            <div class="timeline-content card">
+              <h3 class="milestone-title">{m.title}</h3>
+              <p class="milestone-desc">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 会社概要 -->
+    <section class="container overview-section">
+      <div class="overview-box card">
+        <h2 class="overview-title">企業情報</h2>
+        <div class="overview-grid">
+          <div class="overview-row">
+            <span class="overview-label">名称</span>
+            <span class="overview-val">AstroSphere 株式会社 (AstroSphere Inc.)</span>
+          </div>
+          <div class="overview-row">
+            <span class="overview-label">所在地</span>
+            <span class="overview-val">〒150-0002 東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア</span>
+          </div>
+          <div class="overview-row">
+            <span class="overview-label">事業内容</span>
+            <span class="overview-val">超高速Webアプリケーション構築、UI/UXデザイン設計、Astro導入支援</span>
+          </div>
+          <div class="overview-row">
+            <span class="overview-label">主要技術</span>
+            <span class="overview-val">Astro, TypeScript, React, Tailwind / CSS Next, Cloudflare</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .about-page {
+    padding-bottom: 90px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-header {
+    padding: 80px 0 50px;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+    margin: 16px 0;
+  }
+
+  @media (min-width: 768px) {
+    .page-title {
+      font-size: 3.2rem;
+    }
+  }
+
+  .page-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .sub-title {
+    font-size: 1.8rem;
+    margin-top: 14px;
+  }
+
+  .section-subtext {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-top: 8px;
+  }
+
+  /* バリュー */
+  .values-section {
+    margin-bottom: 90px;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .values-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .value-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .value-index {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(99, 102, 241, 0.2);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .value-title {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .value-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  /* チーム */
+  .team-section {
+    margin-bottom: 90px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .team-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.15);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 18px;
+  }
+
+  .member-name {
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+  }
+
+  .member-role {
+    font-size: 0.85rem;
+    color: #818cf8;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .member-bio {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* タイムライン */
+  .timeline-section {
+    margin-bottom: 90px;
+  }
+
+  .timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  @media (min-width: 640px) {
+    .timeline-item {
+      grid-template-columns: 100px 1fr;
+      gap: 32px;
+    }
+  }
+
+  .timeline-year {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #818cf8;
+    text-align: right;
+  }
+
+  .milestone-title {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .milestone-desc {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  /* 会社概要 */
+  .overview-box {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 36px;
+  }
+
+  .overview-title {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .overview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .overview-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    font-size: 0.95rem;
+  }
+
+  @media (min-width: 640px) {
+    .overview-row {
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+    }
+  }
+
+  .overview-label {
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+
+  .overview-val {
+    color: var(--text-main);
+  }
+</style>
